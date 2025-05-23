@@ -12,6 +12,6 @@ class ToDoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: ToDoAppMaterial());
+    return const MaterialApp(home: ToDoAppMaterial());//home is the default root of the app which is displayed first when the app starts
   }
 }

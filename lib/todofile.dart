@@ -79,6 +79,7 @@ class _ToDoAppPage extends State {
               height: 40,
               width: 40,
               child: ClipOval(
+                //borderRadius: BorderRadius.circular(10);- we can also do this instead of fit
                 child: Image.asset('Assets/images/ak.jpg', fit: BoxFit.cover),
               ),
             ),
