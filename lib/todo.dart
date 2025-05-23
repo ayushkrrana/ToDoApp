@@ -16,9 +16,9 @@ class ToDo{
   */
 
   // static list is the type of list that belong to the class itself
-static List<ToDo> todolist(){
-  return[
-  ];
+static List<ToDo> todolist(){ // static list is created once and does not change
+  return[  // todolist() is a name of the static list
+   ];
 
 
 }

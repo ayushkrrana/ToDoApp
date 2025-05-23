@@ -9,7 +9,7 @@ class ToDoAppMaterial extends StatefulWidget {
 }
 
 class _ToDoAppPage extends State {
-  final toDosList = ToDo.todolist();
+  final toDosList = ToDo.todolist();// here we create a variable of toDosList in which we pass the ToDo class static list name which is todolist()
   List _foundToDo = [];
 
   void _handleToDoChange(ToDo todo) {
@@ -33,7 +33,6 @@ class _ToDoAppPage extends State {
         0,
         ToDo(DateTime.now().millisecondsSinceEpoch.toString(), toDoss),
       );
-
     });
     textEditingController1.clear();
   }
@@ -53,7 +52,7 @@ class _ToDoAppPage extends State {
               .toList();
     }
     setState(() {
-      _foundToDo=results;
+      _foundToDo = results;
     });
   }
 
@@ -90,18 +89,19 @@ class _ToDoAppPage extends State {
       body: Stack(
         // we wrap the column with the column to access the children because the stack used the children rather than child
         children: [
-          Column(
+          Column( // it will do the text vertically
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
                 child: TextField(
-                  onChanged: (value)=>_runFilter(value),
+                  onChanged: (value) => _runFilter(value),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(15),
                     prefixIcon: Icon(Icons.search),
                     hintText: 'Search',
                     fillColor: Colors.white,
                     filled: true,
+                    //border: InputBorder.none,- do not create any border
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide.none,
@@ -127,9 +127,9 @@ class _ToDoAppPage extends State {
                           ),
                         ),
                       ),
-                      for (ToDo todo in _foundToDo)
+                      for (ToDo todo in _foundToDo)//“For each ToDo object in the _foundToDo list, call it todo during this loop.
                         ToDoItem(
-                          todoss: todo,
+                          todoss: todo,// it will print todo from the list of _foundToDO of member function todoss
                           onToDoChanged: _handleToDoChange,
                           onDeleteItem: _deleteToDoItem,
                         ),
@@ -139,11 +139,12 @@ class _ToDoAppPage extends State {
               ),
             ],
           ),
+          //here alignment of the bottom field in which we add the todo itemsin future
           Align(
             alignment: Alignment.bottomCenter,
             child: Row(
               children: [
-                Expanded(
+                Expanded(// we use expanded only in rows and column and it prevent overflow because it allow the child widget to take the remaining space
                   child: Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: Container(
